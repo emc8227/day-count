@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="jquery.js"></script>
+        <meta charset="UTF-8">
+        <title>日期計算</title>
+    </head>
+    <body>
+        <p>請輸入要計算的日期</p>
+        <input type="text" name="year" id="year"/>年
+        <input type="text" name="month" id="month"/>月
+        <input type="text" name="day" id="day"/>日
+        <button  onClick = "count(this)" >count
+        
+        <script>
+        
+        function count(){
+        var d=document.getElementById("day").value;
+        var m=document.getElementById("month").value;
+           a=(m-1)*30
+           b=Math.floor(m/2)
+           
+        var y=document.getElementById("year").value;
+            if (y%4 != 0){sp=2}
+            else{sp=1}
+            
+            
+        if(m<=2){    
+         sum=parseInt(d,10)+parseInt(a,10)+parseInt(b,10)
+         }
+        if(2<m<=8){sum=parseInt(d,10)+parseInt(a,10)+parseInt(b,10)-parseInt(sp,10)
+         }
+        if(8<m<12){sum=parseInt(d,10)+parseInt(a,10)+parseInt(b,10)-parseInt(sp,10)+1
+         }
+        if(m==12){sum=parseInt(d,10)+parseInt(a,10)+parseInt(b,10)-parseInt(sp,10)
+         } 
+         alert(sum)
+        }
+        </script>
+    </body>
+</html>
